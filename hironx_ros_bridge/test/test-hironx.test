@@ -1,5 +1,5 @@
 <launch>
-  <arg name="corbaport" default="2809" />
+  <arg name="corbaport" default="2895" />
   <arg name="GUI" default="false" />
 
   <!-- See https://github.com/start-jsk/rtmros_common/issues/416#issuecomment-46846623 -->
@@ -13,16 +13,16 @@
   </include>
 
   <test type="test_hironx_fullbody.py" pkg="hironx_ros_bridge" test-name="test_hironx_fullbody" time-limit="1000" retry="4"
-        args="-ORBInitRef NameService=corbaloc:iiop:localhost:2809/NameService" />
+        args="-ORBInitRef NameService=corbaloc:iiop:localhost:$(arg corbaport)/NameService" />
   <test type="test_hironx_limb.py" pkg="hironx_ros_bridge" test-name="test_hironx_limb" time-limit="200" retry="4"
-        args="-ORBInitRef NameService=corbaloc:iiop:localhost:2809/NameService" />
+        args="-ORBInitRef NameService=corbaloc:iiop:localhost:$(arg corbaport)/NameService" />
   <test type="test_hironx_target.py" pkg="hironx_ros_bridge" test-name="test_hironx_target" time-limit="200" retry="4"
-        args="-ORBInitRef NameService=corbaloc:iiop:localhost:2809/NameService" />
+        args="-ORBInitRef NameService=corbaloc:iiop:localhost:$(arg corbaport)/NameService" />
   <test type="test_hironx_controller.py" pkg="hironx_ros_bridge" test-name="test_hironx_controller" time-limit="200" retry="4"
-        args="-ORBInitRef NameService=corbaloc:iiop:localhost:2809/NameService" />
+        args="-ORBInitRef NameService=corbaloc:iiop:localhost:$(arg corbaport)/NameService" />
 
   <test type="test_hironx_ik.py" pkg="hironx_ros_bridge" test-name="test_hironx_ik" time-limit="200"  retry="4"
-        args="-ORBInitRef NameService=corbaloc:iiop:localhost:2809/NameService" />
+        args="-ORBInitRef NameService=corbaloc:iiop:localhost:$(arg corbaport)/NameService" />
   <test type="test_hironx_ik_noinit.py" pkg="hironx_ros_bridge" test-name="test_hironx_ik_noinit" time-limit="3000" retry="4"
-        args="-ORBInitRef NameService=corbaloc:iiop:localhost:2809/NameService" />
+        args="-ORBInitRef NameService=corbaloc:iiop:localhost:$(arg corbaport)/NameService" />
 </launch>

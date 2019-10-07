@@ -1,5 +1,5 @@
 <launch>
-  <arg name="corbaport" default="2809" />
+  <arg name="corbaport" default="2896" />
   <arg name="GUI" default="false" />
 
   <include file="$(find hironx_ros_bridge)/test/test-hironx-ros-bridge-common.launch">
